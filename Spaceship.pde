@@ -6,12 +6,16 @@ class Spaceship extends Floater  {
 		yCorners = new int[corners];
 		declareX();
 		declareY();
-		myColor = 0;
+		for(int i = 0; i < corners; i++){
+			xCorners[i]*=2;
+			yCorners[i]*=2;
+		}
+		myColor = 255;
 		myCenterX = 500;
 		myCenterY = 500;
 		myDirectionX = 0;
 		myDirectionY = 0;
-		myPointDirection = 180;
+		myPointDirection = 0;
 	}
 	
 

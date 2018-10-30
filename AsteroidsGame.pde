@@ -5,6 +5,15 @@ public void setup(){
 }
 public void draw() 
 {
-  ship.show();
+	background(0);
+	ship.move();
+	ship.setPointDirection(mouseY);
+	ship.show();
 }
 
+public void keyPressed(){
+	
+	if(key == 'w'){
+		ship.accelerate(5);
+	}
+}
