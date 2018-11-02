@@ -4,8 +4,12 @@ class Spaceship extends Floater  {
 		corners = 40;
 		xCorners = new int[corners];
 		yCorners = new int[corners];
+
 		declareX();
 		declareY();
+		int[] temp = yCorners;
+		yCorners = xCorners;
+		xCorners = temp;
 		for(int i = 0; i < corners; i++){
 			xCorners[i]*=2;
 			yCorners[i]*=2;
@@ -17,7 +21,13 @@ class Spaceship extends Floater  {
 		myDirectionY = 0;
 		myPointDirection = 0;
 	}
-	
+	public void hyperspace(){
+		ship.setX((int)(Math.random()*1000));
+		ship.setY((int)(Math.random()*1000));
+		ship.setDirectionX(0);
+		ship.setDirectionY(0);
+		ship.setPointDirection((int)(Math.random()*360));
+	}
 
 	public void declareX(){
 			xCorners[0] = -5;
