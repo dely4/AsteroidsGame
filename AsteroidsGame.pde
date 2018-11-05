@@ -28,10 +28,10 @@ public void draw()
 		ship.accelerate(-0.1);
 	}
 	if(aPressed){
-		ship.turn(-3);
+		ship.turn(-2);
 	}
 	if(dPressed){
-		ship.turn(3);
+		ship.turn(2);
 	}
 }
 
