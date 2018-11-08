@@ -1,11 +1,13 @@
 Spaceship ship;
 Star[] stars;
+Asteroid ast;
 boolean wPressed = false;
 boolean sPressed = false;
 boolean aPressed = false;
 boolean dPressed = false;
 
 public void setup(){
+	ast = new Asteroid();
 	size(1000,1000);
 	ship = new Spaceship();
 	stars = new Star[50];
@@ -19,6 +21,8 @@ public void draw()
 	for(int i = 0; i < 50; i++){
 		stars[i].draw();
 	}
+	ast.move();
+	ast.show();
 	ship.move();
 	ship.show();
 	if(wPressed){
