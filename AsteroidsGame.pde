@@ -7,7 +7,7 @@ boolean aPressed = false;
 boolean dPressed = false;
 
 public void setup(){
-	for(int i = 0; i < 25; i++){
+	for(int i = 0; i < 10; i++){
 		ast.add(new Asteroid());
 	}
 	size(1000,1000);
@@ -23,7 +23,7 @@ public void draw()
 	for(int i = 0; i < 50; i++){
 		stars[i].draw();
 	}
-	for(int i = 0; i < 25; i++){
+	for(int i = 0; i < 10; i++){
 		ast.get(i).show();
 		ast.get(i).move();
 	}

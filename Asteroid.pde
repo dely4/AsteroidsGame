@@ -3,18 +3,20 @@ class Asteroid extends Floater{
 	private int rotVel;
 	public Asteroid(){
 		rotVel = (int)(Math.random()*3-2);
-		corners = (int)(Math.random()*2+4);
+		corners = 4;
 		xCorners = new int[corners];
 		yCorners = new int[corners];
-		for(int i =0; i < corners; i++){
-			xCorners[i] = (int)(Math.random()*51-25);
-			yCorners[i] = (int)(Math.random()*51-25);
+		xCorners[0] = (int)(Math.random()*51-25);
+		yCorners[0] = (int)(Math.random()*51-25);
+		for(int i = 1; i < corners; i++){
+			xCorners[i] = (xCorners[i-1] + ((int)(Math.sin(Math.random()*(HALF_PI*1.5))*50)));
+			yCorners[i] = (yCorners[i-1] + ((int)(Math.cos(Math.random()*(HALF_PI*1.5))*50)));
 		}
 		myColor = 255;
 		myCenterX = Math.random()*1000;
 		myCenterY = Math.random()*1000;
-		myDirectionX = Math.random()*5;
-		myDirectionY = Math.random()*5;
+		myDirectionX = Math.random()*2;
+		myDirectionY = Math.random()*2;
 		myPointDirection = Math.random()*360;
 	}
 	public void setX(int x){myCenterX = x;}  
