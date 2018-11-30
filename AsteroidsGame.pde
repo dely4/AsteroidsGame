@@ -23,7 +23,12 @@ public void draw()
 	for(int i = 0; i < 50; i++){
 		stars[i].draw();
 	}
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < ast.size(); i++){
+		if(dist(ship.getX(), ship.getY(), ast.get(i).getX(), ast.get(i).getY()) <= 35){
+			ast.remove(i);
+		}
+	}
+	for(int i = 0; i < ast.size(); i++){
 		ast.get(i).show();
 		ast.get(i).move();
 	}
