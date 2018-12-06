@@ -11,7 +11,7 @@ public void setup(){
 	for(int i = 0; i < 10; i++){
 		ast.add(new Asteroid());
 	}
-	size(1000,1000);
+	size(800,800);
 	ship = new Spaceship();
 	stars = new Star[50];
 	for(int i = 0; i < 50; i++){
@@ -33,7 +33,7 @@ public void draw()
 	}
 	for(int i = 0; i < bullets.size(); i++){
 		for(int q = 0; q < ast.size(); q++){
-			if(dist(ast.get(q).getX(), ast.get(q).getY(), bullets.get(i).getX(), bullets.get(i).getY()) <= 20){
+			if(dist(ast.get(q).getX(), ast.get(q).getY(), bullets.get(i).getX(), bullets.get(i).getY()) <= 30){
 				ast.remove(q);
 				bullets.remove(i);
 				break;
@@ -53,17 +53,17 @@ public void draw()
 			break;
 		}	
 	}
-
+	for(Bullet bullet: bullets){
+		bullet.show();
+		bullet.move();
+	}
 	for(int i = 0; i < ast.size(); i++){
 		ast.get(i).show();
 		ast.get(i).move();
 	}
 	ship.move();
 	ship.show();
-	for(Bullet bullet: bullets){
-		bullet.show();
-		bullet.move();
-	}
+	
 
 	if(wPressed){
 		ship.accelerate(0.1);
